@@ -1,0 +1,34 @@
+# Set prefix key to Ctrl-a
+unbind-key C-b
+set-option -g prefix C-j
+
+# start window indexing at one instead of zero 使窗口从1开始，默认从0开始
+set -g base-index 1
+
+set -g status-interval 1
+set -g status-justify centre # center align window list
+
+# Vi copypaste mode
+set-window-option -g mode-keys vi
+
+# hjkl pane traversal
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+
+# THEME
+set -g status-bg black
+set -g status-fg white
+set -g window-status-current-bg white
+set -g window-status-current-fg black
+set -g window-status-current-attr bold
+
+# Reload tmux config
+bind r source-file ~/.tmux.conf
+
+#鼠标滚轮来卷动窗口内容
+#set-window-option -g mode-mouse on
+#鼠标点击选择tab
+#set -g mode-mouse on
+#set -g mouse-select-window on
+#set -g mouse-select-pane on
